@@ -1,5 +1,5 @@
 # 3-Basic-React-App
-# link: https://swanktos.github.io/3-Basic-React-App/
+### link: https://swanktos.github.io/3-Basic-React-App/
 
 ## A showcase of my 3 small web project with react from FreeCodeCamp
 1. Drum Machine
