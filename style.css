@@ -1,3 +1,5 @@
+
+
 body {
     display: flex;
     justify-content: center;
@@ -37,4 +39,8 @@ body {
 .x-button:hover {
     filter: brightness(150%);
     cursor: pointer;
+}
+
+* {
+    transition: all 0.1s ease-in-out;
 }

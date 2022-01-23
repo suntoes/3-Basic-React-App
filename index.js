@@ -24,9 +24,9 @@ function App() {
   return(
     <div className="main-wrap">
       <header className="main-header">
-      <div className="x-button" onClick={drum}>Drum Machine</div>
-      <div className="x-button" onClick={clo}>25+5 Clock</div>
-      <div className="x-button" onClick={calcu}>Calculator</div>
+      <div className="x-button" onClick={drum} style={{filter: dTest ? 'brightness(150%)' : ''}}>Drum Machine</div>
+      <div className="x-button" onClick={clo} style={{filter: pcTest ? 'brightness(150%)' : ''}}>25+5 Clock</div>
+      <div className="x-button" onClick={calcu} style={{filter: cTest ? 'brightness(150%)' : ''}}>Calculator</div>
       </header>
       <div className="showcase">
         { dTest ? <Appdm /> : cTest ? <Appc /> : pcTest ? <Apppc /> : 'loading...'}
