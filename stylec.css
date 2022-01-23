@@ -1,0 +1,82 @@
+
+.memo {
+    text-align:center;
+    width:25rem;
+    color: #636363;
+}
+
+.wrapper{
+    color: white;
+    margin: auto;
+    display: grid;
+    width: 25rem;
+    height: 35rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "display display display display"
+    "clear back divide multiply"
+    "seven eight nine add"
+    "four five six minus"
+    "one two three equals"
+    "zero zero decimal equals";
+}
+
+.display {
+    font-size: 2rem;
+    background-color: #424242;
+    border: 1px solid #212121;
+    text-align: right;
+    grid-area: display;
+}
+
+input {
+    padding-left: 1rem;
+    font-size: 1rem;
+    background-color: #424242;
+    color: gold;
+    width: 23.575rem;
+    height: 60%;
+    outline: none;
+    border-radius: 0;
+    border: none;
+    overflow-wrap: break-word;
+}
+
+input::placeholder {
+    color: gold;
+}
+
+#display{
+    margin-right: 1rem;
+}
+
+.button {
+    background-color: #424242;
+    border: 1px solid #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    filter: brightness(150%);
+    cursor: pointer;
+}
+
+#zero {
+    grid-area: zero;
+}
+
+#clear, #back {
+    background-color: rgb(233, 61, 61);
+}
+
+#divide, #multiply, #add, #subtract {
+    background-color: #636363;
+}
+
+#equals {
+    grid-area: equals;
+    background-color: rgb(61, 61, 233);
+}

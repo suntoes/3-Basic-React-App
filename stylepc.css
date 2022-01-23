@@ -1,0 +1,81 @@
+.everything {
+    color:white;
+    font-weight:100;
+}
+
+h2 {
+    border-top: 2px solid #868686;
+    border-right: 2px solid #333333;
+    margin-bottom: 1.125rem;
+    border-left: 2px solid #868686;
+    text-align: center;
+    background-color: #424242;
+}
+
+.instrument{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-count{
+    display:flex;
+    align-items: center;
+    height: 80px;
+    background-color: #424242;
+}
+
+h1{
+
+    text-align: center;
+    width:100%;
+    font-size: 80px;
+}
+
+.time-sets{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background-color: #424242;
+    height: 40px;
+    margin-top: -23px;
+}
+.time-sets-title{
+    display: flex;
+    height: 65px;
+    width: 50%;
+    background-color: #636363;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adjust-length {
+    width: 10rem;
+    padding-top: 0.375rem;
+    text-align: center;
+}
+
+.break-session-div{
+    margin-top: 20px;
+    display:flex;
+}
+h4{
+    font-size: 25px;
+    padding: 0 15px 0 15px;
+}
+h3{
+    margin-top: 0px;
+    height: 40px;
+    font-size: 21px;
+    text-align: center;
+    width:100%;
+}
+button{
+    border-radius: 0px;
+    height: 40px;
+    width: 40px;
+    background-color: #636363;
+    color:white;
+}
+.mute{
+    margin: 20px 0 0 0;
+}
