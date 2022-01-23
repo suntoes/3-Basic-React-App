@@ -131,7 +131,8 @@ function Apppc() {
       setTimerOn(!timerOn)
   }
   const resetTime = () => {
-      playBump();
+      !timerOn && playBump();
+      timerOn && controlTime();
       setDisplayTime(25*60);
       setBreakTime(5*60);
       setSessionTime(25*60);
