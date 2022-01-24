@@ -143,7 +143,7 @@ function AppClock() {
 
   return (
       <div className="everything">
-          <link rel="stylesheet" href="./styleClock.css"></link>
+          <link rel="stylesheet" href="./3 style css/styleClock.css"></link>
           <h2>25 + 5 React Clock by swanktos</h2>
           <h2>{onBreak ? "Clock on Break" : "Clock on Session"}</h2>
           <div className="main-count">
@@ -298,7 +298,7 @@ function AppCalculator() {
 
   return(
     <div className="wrapper">
-      <link rel="stylesheet" href="./styleCalculator.css"></link>
+      <link rel="stylesheet" href="./3 style css/styleCalculator.css"></link>
       <div className="display">
         <input placeholder="0" value={input} ></input>
         <br></br>
@@ -389,7 +389,7 @@ function AppDrum() {
   const [volume, setVolume] = React.useState(1);
   return(
       <div id="drum-machine">
-          <link rel="stylesheet" href="./styleDrum.css"></link>
+          <link rel="stylesheet" href="./3 style css/styleDrum.css"></link>
           {audioClip.map(clip => (
               <AppdmPad key={clip.id} clip={clip} volume={volume} />
           ))}
