@@ -11,7 +11,7 @@
 3. Calculator
    - 4 basic arithmetic operation with decimals
    - Too common
-## link: https://swanktos.github.io/3-Basic-React-App/
+## live demo link: https://swanktos.github.io/3-Basic-React-App/
 ## audio sources:
 1. Key Press - darklight721
    - https://raw.githubusercontent.com/darklight721/keyboard-sounds/master/audio/key_press.mp3
