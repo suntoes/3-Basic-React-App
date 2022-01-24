@@ -1,5 +1,5 @@
-# 3 Basic React App
-## A showcase of my 3 small project w/ react from FreeCodeCamp
+# 3 Basic React Apps
+## A showcase of my 3 small project w/ React from freeCodeCamp
 1. Drum Machine
    - 9 drum pads and adjustable volume
    - Kinda boring
@@ -12,3 +12,11 @@
    - 4 basic arithmetic operation with decimals
    - Too common
 ## link: https://swanktos.github.io/3-Basic-React-App/
+## audio sources:
+1. Key Press - darklight721
+   - https://raw.githubusercontent.com/darklight721/keyboard-sounds/master/audio/key_press.mp3
+2. Drum - freeCodeCamp
+   - https://www.freecodecamp.org/
+3. Alarm - freeCodeCamp
+   - https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav
+   
