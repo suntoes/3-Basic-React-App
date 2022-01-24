@@ -7,19 +7,19 @@ function App() {
     setcTest(false);
     setpcTest(false);
     setdTest(true);
-  }
+  };
 
   const clo = () => {
     setdTest(false);
     setcTest(false);
     setpcTest(true);
-  }
+  };
 
   const calcu = () => {
     setpcTest(false);
     setdTest(false);
     setcTest(true);
-  }
+  };
 
   return(
     <div className="main-wrap">
@@ -29,32 +29,32 @@ function App() {
       <div className="x-button" onClick={calcu} style={{filter: cTest ? 'brightness(150%)' : ''}}>Calculator</div>
       </header>
       <div className="showcase">
-        { dTest ? <Appdm /> : cTest ? <Appc /> : pcTest ? <Apppc /> : 'loading...'}
+        { dTest ? <AppDrum /> : cTest ? <AppCalculator /> : pcTest ? <AppClock /> : 'loading...'}
         <p style={{color: 'white', textAlign: 'center'}}>{ (dTest || cTest || pcTest) && 'by: swanktos'}</p>
       </div>
     </div>
   )
-}
+};
 
+function AppClock() {
+  const [displayTime, setDisplayTime] = React.useState(25*60);
+  const [breakTime, setBreakTime] = React.useState(5*60);
+  const [sessionTime, setSessionTime] = React.useState(25*60);
+  const [timerOn, setTimerOn] = React.useState(false);
+  const [onBreak, setOnBreak] = React.useState(false);
+  const [onMute, setOnMute] = React.useState(false);
+  const [breakAudio, setBreakAudio] = React.useState(
+      new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav")
+  );
 
-
-function Apppc() {
   function formatTime(time) {
     let min = Math.floor(time / 60)
     let sec = time % 60
     return (
       (min < 10 ? '0' + min : min) + ':' + (sec < 10 ? '0' + sec : sec)
     )
-  }
-  const [displayTime, setDisplayTime] = React.useState(25*60)
-  const [breakTime, setBreakTime] = React.useState(5*60)
-  const [sessionTime, setSessionTime] = React.useState(25*60)
-  const [timerOn, setTimerOn] = React.useState(false)
-  const [onBreak, setOnBreak] = React.useState(false)
-  const [onMute, setOnMute] = React.useState(false)
-  const [breakAudio, setBreakAudio] = React.useState(
-      new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav")
-  )
+  };
+
   const [bump, setBump] = React.useState(
       new Audio("https://raw.githubusercontent.com/darklight721/keyboard-sounds/master/audio/key_press.mp3")
   )
@@ -77,6 +77,7 @@ function Apppc() {
       playBump()
       setOnMute(!onMute)    
   }
+
   const changeTime = (amount, type) => {
       playBump();
       switch(type) {
@@ -95,6 +96,7 @@ function Apppc() {
                break;
       }
   }
+
   const controlTime = () => {
       playBump();
       let sec = 1000;
@@ -130,6 +132,7 @@ function Apppc() {
       }
       setTimerOn(!timerOn)
   }
+
   const resetTime = () => {
       !timerOn && playBump();
       timerOn && controlTime();
@@ -137,9 +140,10 @@ function Apppc() {
       setBreakTime(5*60);
       setSessionTime(25*60);
   }
+
   return (
       <div className="everything">
-          <link rel="stylesheet" href="./stylepc.css"></link>
+          <link rel="stylesheet" href="./styleClock.css"></link>
           <h2>25 + 5 React Clock by swanktos</h2>
           <h2>{onBreak ? "Clock on Break" : "Clock on Session"}</h2>
           <div className="main-count">
@@ -180,7 +184,7 @@ function Apppc() {
           </button>
       </div>
   )
-}
+};
 
 function Length({title, changeTime, type, time, formatTime}) {
   return (
@@ -193,16 +197,16 @@ function Length({title, changeTime, type, time, formatTime}) {
           </div>
       </div>
   )
-}
+};
 
-function Appc() {
+function AppCalculator() {
   const [input, setInput] = React.useState('');
   const [output, setOutput] = React.useState(0);
   const [decimalTrigger, setDecimalTrigger] = React.useState(true);
   const [zeroTrigger, setZeroTrigger] = React.useState(true);
   const [bump, setBump] = React.useState(
     new Audio("https://raw.githubusercontent.com/darklight721/keyboard-sounds/master/audio/key_press.mp3")
-  )
+  );
   
   React.useEffect(() => {
     document.addEventListener('keydown', keyDownPress);
@@ -210,10 +214,12 @@ function Appc() {
         document.removeEventListener("keydown", keyDownPress)
     }
 })
+
   const playBump =() => {
     bump.currentTime = 0;
     bump.play()
   }
+
   const customKeys = { 
     48: '0',
     49: '1',
@@ -292,7 +298,7 @@ function Appc() {
 
   return(
     <div className="wrapper">
-      <link rel="stylesheet" href="./stylec.css"></link>
+      <link rel="stylesheet" href="./styleCalculator.css"></link>
       <div className="display">
         <input placeholder="0" value={input} ></input>
         <br></br>
@@ -320,7 +326,7 @@ function Appc() {
     </div>
 
   )
-}
+};
 
 const audioClip = [
   {
@@ -379,11 +385,11 @@ const audioClip = [
   }
 ];
 
-function Appdm() {
-  const [volume, setVolume] = React.useState(1)
+function AppDrum() {
+  const [volume, setVolume] = React.useState(1);
   return(
       <div id="drum-machine">
-          <link rel="stylesheet" href="./styledm.css"></link>
+          <link rel="stylesheet" href="./styleDrum.css"></link>
           {audioClip.map(clip => (
               <AppdmPad key={clip.id} clip={clip} volume={volume} />
           ))}
@@ -398,32 +404,31 @@ function Appdm() {
           />
       </div>
   )
-}
+};
 
 function AppdmPad({clip, volume}) {
-  const [active, setActive] = React.useState(false)
-  const [color, setColor] = React.useState('#42f5a4')
+  const [active, setActive] = React.useState(false);
+  const [color, setColor] = React.useState('#42f5a4');
   const colors = [
       'red', 'orange', 'yellow', '#DFFF00', 'green', '#00FF7F', 'cyan', '#F0FFFF', 'blue', 'violet', 'magenta', '#F33A6A'
-  ]
+  ];
   
   const getColorIndex = () => {
       setColor(colors[Math.floor(Math.random() * colors.length)])
-  }
+  };
 
   React.useEffect(() => {
       document.addEventListener('keydown', handleKeyPress);
       return () => {
           document.removeEventListener("keydown", handleKeyPress)
       }
-  })
+  });
 
   const handleKeyPress = (e) => {
       if (e.keyCode === clip.keyCode) {
           playSound();
       }
-  }
-
+  };
 
   const playSound = () => {
       setActive(true)
@@ -433,7 +438,8 @@ function AppdmPad({clip, volume}) {
       audioTag.volume = volume
       audioTag.currentTime = 0;
       audioTag.play()
-  }
+  };
+
   return(
       <div
           onClick={playSound}
@@ -444,6 +450,6 @@ function AppdmPad({clip, volume}) {
           {clip.keyTrigger}
       </div>
   )
-}
+};
 
 ReactDOM.render(<App/>, document.getElementById("root"))
