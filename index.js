@@ -57,11 +57,12 @@ function AppClock() {
 
   const [bump, setBump] = React.useState(
       new Audio("https://raw.githubusercontent.com/darklight721/keyboard-sounds/master/audio/key_press.mp3")
-  )
+  );
+
   const playBeep =() => {
       breakAudio.currentTime = 0;
       breakAudio.play()
-  }
+  };
 
   const playBump =() => {
       if (onMute) {
@@ -71,12 +72,12 @@ function AppClock() {
       }
       bump.currentTime = 0;
       bump.play()
-  }
+  };
 
   const mutePrompt = () => {
       playBump()
       setOnMute(!onMute)    
-  }
+  };
 
   const changeTime = (amount, type) => {
       playBump();
@@ -95,7 +96,7 @@ function AppClock() {
               !timerOn && setDisplayTime(sessionTime + amount);
                break;
       }
-  }
+  };
 
   const controlTime = () => {
       playBump();
@@ -131,7 +132,7 @@ function AppClock() {
           clearInterval(localStorage.getItem('interval-id'));
       }
       setTimerOn(!timerOn)
-  }
+  };
 
   const resetTime = () => {
       !timerOn && playBump();
@@ -139,7 +140,7 @@ function AppClock() {
       setDisplayTime(25*60);
       setBreakTime(5*60);
       setSessionTime(25*60);
-  }
+  };
 
   return (
       <div className="everything">
