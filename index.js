@@ -151,12 +151,12 @@ function AppClock() {
               <div className="instrument">
                   <button onClick={controlTime}>
                       {timerOn ?
-                          <i class="fas fa-pause-circle"></i> :
-                          <i class="fas fa-play-circle"></i>
+                          <i className="fas fa-pause-circle"></i> :
+                          <i className="fas fa-play-circle"></i>
                       }
                   </button>
                   <button onClick={resetTime}>
-                      <i class="fas fa-redo-alt"></i>
+                      <i className="fas fa-redo-alt"></i>
                   </button>
               </div>
               <h1>{formatTime(displayTime)}</h1>
@@ -179,8 +179,8 @@ function AppClock() {
           </div>
           <button className="mute" onClick={mutePrompt}>
           {onMute ? 
-                  <i class="fas fa-volume-up"></i> : 
-                  <i class="fas fa-volume-mute"></i>
+                  <i className="fas fa-volume-up"></i> : 
+                  <i className="fas fa-volume-mute"></i>
               }
           </button>
       </div>
@@ -284,6 +284,10 @@ function AppCalculator() {
     setOutput(eval(input))
   }
 
+
+  const inputBlank = (e) => {
+  }
+
   const allClear = () => {
     playBump();
     setInput('');
@@ -301,7 +305,7 @@ function AppCalculator() {
     <div className="wrapper">
       <link rel="stylesheet" href="./styleCalculator.css"></link>
       <div className="display">
-        <input placeholder="0" value={input} ></input>
+        <input placeholder="0" value={input} onChange={inputBlank}></input>
         <br></br>
         <div id="display">{output}</div>
       </div>
