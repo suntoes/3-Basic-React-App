@@ -1,5 +1,5 @@
 # 3 Basic React Apps
-## A showcase of my 3 small project w/ React from freeCodeCamp
+## A showcase of my 3 small projects w/ React from freeCodeCamp
 1. Drum Machine
    - 9 drum pads and adjustable volume
    - Kinda boring
